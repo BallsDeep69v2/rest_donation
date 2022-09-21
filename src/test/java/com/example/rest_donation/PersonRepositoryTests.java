@@ -12,7 +12,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -31,7 +32,7 @@ public class PersonRepositoryTests {
             var json = """
                     {
                        "amount": 5,
-                       "date": "2022-01-01"
+                       "date": "2022-07-22"
                     }
                     """;
             var resource = "/api/donations/17";

@@ -13,13 +13,13 @@ public class DonationAdvice {
 
     @ExceptionHandler(NoSuchDonationException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ApiError handleNoSuchElementException(NoSuchDonationException e) {
-        return new ApiError(e.getMessage());
+    public String handleNoSuchElementException(NoSuchDonationException e) {
+        return e.getMessage();
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ApiError handleInvalidArguments(MethodArgumentNotValidException e) {
-        return new ApiError(e.getMessage());
+    public String handleInvalidArguments(MethodArgumentNotValidException e) {
+        return e.getMessage();
     }
 }
